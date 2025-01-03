@@ -51,12 +51,28 @@ python main.py
    - Generate a comprehensive summary of the findings
    - Display both the raw search results and the final summary
 
-## Example Code
+## Example Code & Output
 ```python
 from swarm import Swarm
 topic = "artificial intelligence"
 test_agents(topic)
 ```
+
+### Example Output
+```
+Search Agent Response:
+Latest News on Artificial Intelligence
+- Top 15 AI Trends for 2025: Focus on sustainability and resource management
+- 5 Big Advances Last Year In Artificial Intelligence: ChatGPT developments and explainable AI
+- Our Predictions for AI in 2025: Apple's intelligence system and chatbot growth
+
+Summary Agent Response:
+Artificial Intelligence to Play Greater Role in Sustainability in 2025
+AI advancements in 2025 are focused on resource management and efficiency across industries. 
+Key developments include ChatGPT-like systems, explainable AI, and Apple's intelligence system 
+impact. Growth trajectory emphasizes innovation and smart management practices.
+```
+
 
 ## Configuration
 The system uses the following default settings:
