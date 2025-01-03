@@ -1,5 +1,3 @@
-# tests.py
-
 import unittest
 from main import fetch_latest_news, search_agent, summary_agent, client
 from openai import OpenAI

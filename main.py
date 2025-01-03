@@ -6,19 +6,14 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import os
 
-from swarm import Swarm, Agent
-from openai import OpenAI
-import os
 
-# Configure OpenAI client for local Ollama instance
 test_client = OpenAI(
     base_url="http://localhost:11434/v1",
-    api_key="dummy-key"  # Dummy key since Ollama doesn't need a real key
+    api_key="dummy-key"  # dummy key
 )
 
-# Initialize Swarm client
-client = Swarm(client=test_client)
 
+client = Swarm(client=test_client)
 MODEL = "llama3.2:latest"
 
 
@@ -37,7 +32,6 @@ def fetch_latest_news(topic):
         return f"No news articles found on the teopics: {topic}."
     print("function")
     
-
 
 search_agent = Agent(
     name="News Searcher",
@@ -86,14 +80,12 @@ summary_agent = Agent(
 # Test the agents
 def test_agents(topic):
     try:
-        # Test search agent
         search_response = client.run(
             agent=search_agent,
             messages=[{"role": "user", "content": f"Search for latest news about {topic}"}]
         )
         print("Search Agent Response:", search_response.messages[-1]["content"])
 
-        # Test summary agent
         summary_response = client.run(
             agent=summary_agent,
             messages=[{"role": "user", "content": f"Summarize the following news: {search_response.messages[-1]['content']}"}]
