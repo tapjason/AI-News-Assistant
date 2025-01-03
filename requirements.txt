@@ -1,4 +1,5 @@
 git+https://github.com/openai/swarm.git
 reflex
 duckduckgo-search
+python-dotenv
 datetime
